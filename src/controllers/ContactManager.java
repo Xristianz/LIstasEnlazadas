@@ -6,22 +6,22 @@ import models.Contact;
 import models.LinkedList;
 
 public class ContactManager {
-    private LinkedList<Contact<String, String>> contacts;
+    private LinkedList<Contact> contacts;
 
     public ContactManager() {
         this.contacts = new LinkedList<>();
     }
 
-    public void addContact(Contact<String, String> contact) {
+    public void addContact(Contact contact) {
         contacts.appendToTail(contact);
     }
 
-    public Contact<String, String> findContactByName(String name) {
-        return contacts.findByValue(new Contact<>(name, null));
+    public Contact findContactByName(String name) {
+        return contacts.findByValue(new Contact(name));
     }
 
     public void deleteContactByName(String name) {
-        contacts.deleteByValue(new Contact<>(name, null));
+        contacts.deleteByValue(new Contact(name));
     }
 
     public void printList() {

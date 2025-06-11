@@ -7,12 +7,18 @@ public class LinkedList<T> {
     
     
     public void appendToTail(T value) {
-        if (head == null) {
-            head = new Node<>(value);
-            size++;
-            return;
+    Node<T> newNode = new Node<>(value);
+    if (head == null) {
+        head = newNode;
+    } else {
+        Node<T> current = head;
+        while (current.getNext() != null) {
+            current = current.getNext();
         }
+        current.setNext(newNode);
     }
+    size++;
+}
 
     public T findByValue(T value){
         Node<T> current =head;

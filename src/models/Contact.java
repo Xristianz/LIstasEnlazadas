@@ -1,22 +1,30 @@
 package models;
 
 
-public class Contact<T, U> {
-    private T name;
-    private U phone;
+public class Contact {
+    private String name;
+    private String phone;
 
-    public Contact(T name, U phone) {
+    public Contact(String name, String phone) {
         this.name = name;
         this.phone = phone;
     }
+    
+
+    public Contact(String name) {
+        this.name = name;
+    }
+
 
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        Contact<?, ?> contact = (Contact<?, ?>) obj;
-        return name.equals(contact.name);
+        Contact contact = (Contact) obj;
+        return name.equals(contact.getName());
     }
+
+    
 
     @Override
     public String toString() {
@@ -24,11 +32,11 @@ public class Contact<T, U> {
     }
 
     
-    public T getName() {
+    public String getName() {
         return name;
     }
 
-    public U getPhone() {
+    public String getPhone() {
         return phone;
     }
 }
