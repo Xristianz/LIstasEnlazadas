@@ -50,19 +50,18 @@ public class LinkedList<T> {
             current = current.getNext();
         }
     }
-    public void print(){
+    public void print() {
         Node<T> current = head;
-    StringBuilder sb = new StringBuilder();
-
-    while (current != null) {
-        sb.append(current.getValue());
-        if (current.getNext() != null) {
-            sb.append(" -> "); 
+    
+        while (current != null) {
+            System.out.print(current.getValue());
+            if (current.getNext() != null) {
+                System.out.print(" -> ");
+            }
+            current = current.getNext();
         }
-        current = current.getNext(); 
-    }
-
-    System.out.println(sb.toString()); 
+    
+        System.out.println(); 
     }
 
     public Node<T> getHead() {
